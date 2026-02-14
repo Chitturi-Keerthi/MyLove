@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Love Letter 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    background: linear-gradient(135deg, #ffb3b3, #8b0000);
+    min-height: 100vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease;
+  }
+  video {
+      width: 300px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+  .letter {
+    max-width: 700px;
+    margin: auto;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    animation: slideUp 2s ease;
+  }
+
+  .gallery {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .gallery img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+    animation: zoomIn 1.5s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+
+  video {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    animation: fadeIn 3s ease;
+  }
+
+  @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+  @keyframes slideUp { from {transform: translateY(40px); opacity:0;} to {transform: translateY(0); opacity:1;} }
+  @keyframes zoomIn { from {transform: scale(0.8); opacity:0;} to {transform: scale(1); opacity:1;} }
+
+</style>
+</head>
+
+<body>
+
+<h1>My Love Letter 💌</h1>
+
+<div class="letter">
+  <p>
+    Hi Bava..... ❤️,<br><br>
+    Nuvvu na pranum bava nuvu aatey naku chalaaa estum Nuvvu naa Life loki vachinakey Life aatey Yemiti aanadi teylisindi.<br>
+    Prathi roju nuvvu naa pakkana vuntey Bagundu aanipisthadi kani manamu long distance lo vunamu nennu chalaa miss aavutuna bava. 💕<br><br>
+    Life lo Eme vuna leykuna naku Nuvvu vuntey chalu nennu nenu Yela aaena thaginchukuntha, <br>
+    nenu eppudu neetho paatu nilabadathaanu, neeku thodugaa untaanu,<br>
+    ninnu eppatiki Vodalanu nuvu yeme cheyali aana cheyee nenun neku Support ga Vuntha, <br>Nejum ki e Valentine's day aanadi aatha naku nachadu<br> but oka day aanukoni manamu happy ga vundali e busy life lo kanisum ela happy ga vunali dani kosum oka day aatey <br> ❤️
+    <B><l>WILL YOU MARRY ME BAVA</l></B> 💍<br><br>
+
+    Happy Valentine’s Day Mogudaaaa..... 😘<br>
+    LOVE YOU SOOOOOOOOOOOOOO<br>OOOOOOOOOOO<br>OOOOOOOOOOOOOOOOO<br>OOOOOOOOOOOOOOO<br> Much Bava heeeee...Mogudaaaaa....<br>
+    </p>
+</div>
+
+
+<video id="video1">
+  <source src="video1.mp4" type="video/mp4">
+</video>
+
+<video id="video2">
+  <source src="video2.mp4" type="video/mp4">
+</video>
+
+<script>
+  const videos = document.querySelectorAll("video");
+
+  videos.forEach(video => {
+    video.addEventListener("click", () => {
+      // Pause all other videos
+      videos.forEach(v => {
+        if (v !== video) {
+          v.pause();
+        }
+      });
+
+      // Play or Pause clicked video
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

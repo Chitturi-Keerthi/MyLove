@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+    body {
+      background: #8b0000;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      animation: fadeIn 2s ease;
+      z-index: 10;
+      position: relative;
+    }
+
+    h1 { font-family: 'Great Vibes', cursive; font-size: 3rem; }
+    h2 { font-weight: 400; margin: 15px 0; }
+    p { margin: 20px 0; }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes-btn { background: white; color: #8b0000; }
+    .no-btn { background: #ff4d4d; color: white; }
+
+    .heart {
+      position: absolute;
+      color: red;
+      animation: floatUp linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+
+      <div class="card">
+  <h1>Happy Valentine’s Day ❤️</h1>
+  <h2>My Hubby</h2>
+
+  <p id="msg">Do you love me? 💖</p>
+
+  <div class="btn-group">
+    <button class="yes-btn" id="yesBtn">YES 😘</button>
+    <button class="no-btn" id="noBtn">NO 😜</button>
+  </div>
+</div>
+
+<script>
+  let step = 1;
+
+  const msg = document.getElementById("msg");
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+
+  yesBtn.addEventListener("click", () => {
+    if (step === 1) {
+      msg.innerHTML = "Will you marry me? 💍";
+      step = 2;
+    } 
+    else if (step === 2) {
+      msg.innerHTML = "Ya I knew.There is no other option for you Mogudaa....";
+      yesBtn.innerHTML = "YES 😍";
+      noBtn.innerHTML = "NO 😜";
+      step = 3;
+    } 
+    else if (step === 3) {
+      window.location.href = "love.html";
+    }
+  });
+
+  function moveButton() {
+    const x = Math.random() * 250 - 125;
+    const y = Math.random() * 120 - 60;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  noBtn.addEventListener("mouseover", moveButton);
+  noBtn.addEventListener("click", moveButton);
+
+   setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 25 + 20 + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+  }, 150);
+</script>
+
+</script>
+
+</body>
+</html>
